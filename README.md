@@ -6,7 +6,7 @@
 
 - **GitHub Actions** 每天 UTC 01:00 / 13:00 自动运行 `scripts/fetch_traffic.py`
 - 抓取 views / clones / referrers / popular paths / stars,与历史数据**合并去重**后 commit 进本仓库 → 数据在 git 历史中永久保留
-- `index.html` 是前端看板(部署在 Vercel),标注了 **2026-07-01 Twitter 投放开始**,含投放前后对比与来源分析
+- `index.html` 是前端看板(部署在 Vercel),标注了 **2026-07-02 Twitter 投放开始**,含投放前后对比与来源分析
 
 ## 数据文件
 
