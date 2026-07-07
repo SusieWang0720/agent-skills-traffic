@@ -1,0 +1,44 @@
+name: Archive GitHub Traffic
+
+on:
+  schedule:
+    # 每天跑两次(UTC 01:00 / 13:00),双保险防止某次失败丢数据
+    - cron: "0 1 * * *"
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: traffic-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch & merge traffic data
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: python3 scripts/fetch_traffic.py
+
+      - name: Commit archived data
+        run: |
+          git config user.name "traffic-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "archive: traffic data $(date -u +%F' '%R) UTC [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi

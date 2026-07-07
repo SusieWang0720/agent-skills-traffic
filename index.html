@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>agent-skills Traffic 看板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#3fb950;--purple:#bc8cff;--orange:#d29922;--tw:#1d9bf0;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px;max-width:1200px;margin:0 auto}
+  h1{font-size:22px;margin-bottom:4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:20px}
+  .sub a{color:var(--blue);text-decoration:none}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+  .card .label{color:var(--muted);font-size:12px;margin-bottom:6px}
+  .card .value{font-size:26px;font-weight:700}
+  .card .delta{font-size:12px;color:var(--muted);margin-top:4px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:20px}
+  .panel h2{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .badge{font-size:11px;background:rgba(29,155,240,.15);color:var(--tw);border:1px solid rgba(29,155,240,.4);border-radius:999px;padding:2px 8px}
+  .chart-box{position:relative;height:320px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  th{color:var(--muted);font-weight:500}
+  tr.twitter td{background:rgba(29,155,240,.08)}
+  .compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .cmp{border:1px solid var(--border);border-radius:8px;padding:14px}
+  .cmp .t{font-size:12px;color:var(--muted);margin-bottom:8px}
+  .cmp .n{font-size:20px;font-weight:700}
+  .up{color:var(--green)} .down{color:#f85149}
+  .footer{color:var(--muted);font-size:12px;text-align:center;margin-top:8px}
+  #err{display:none;background:rgba(248,81,73,.1);border:1px solid #f85149;border-radius:8px;padding:14px;margin-bottom:20px;font-size:13px}
+</style>
+</head>
+<body>
+<h1>📊 Tencent-RTC/agent-skills 流量看板</h1>
+<div class="sub">长期存档 GitHub Traffic 数据(突破官方 14 天限制)· <a href="https://github.com/Tencent-RTC/agent-skills" target="_blank">仓库地址</a> · 最后更新:<span id="updated">加载中…</span></div>
+<div id="err"></div>
+
+<div class="cards">
+  <div class="card"><div class="label">累计浏览量 (Views)</div><div class="value" id="c-views">–</div><div class="delta" id="c-views-d"></div></div>
+  <div class="card"><div class="label">累计独立访客 (Unique)</div><div class="value" id="c-uv">–</div></div>
+  <div class="card"><div class="label">累计 Clone 次数</div><div class="value" id="c-clones">–</div><div class="delta" id="c-clones-d"></div></div>
+  <div class="card"><div class="label">Stars</div><div class="value" id="c-stars">–</div></div>
+  <div class="card"><div class="label">Forks</div><div class="value" id="c-forks">–</div></div>
+</div>
+
+<div class="panel">
+  <h2>每日浏览量趋势 <span class="badge">7/1 起 Twitter 投放</span></h2>
+  <div class="chart-box"><canvas id="viewsChart"></canvas></div>
+</div>
+
+<div class="panel">
+  <h2>🐦 Twitter 投放效果对比(7/1 前 vs 7/1 后)</h2>
+  <div class="compare" id="compareBox"></div>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>每日 Clone 趋势</h2>
+    <div class="chart-box"><canvas id="clonesChart"></canvas></div>
+  </div>
+  <div class="panel">
+    <h2>Stars 增长</h2>
+    <div class="chart-box"><canvas id="starsChart"></canvas></div>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>流量来源分析(最近 14 天)</h2>
+    <div class="chart-box"><canvas id="refChart"></canvas></div>
+  </div>
+  <div class="panel">
+    <h2>来源明细</h2>
+    <table id="refTable"><thead><tr><th>来源</th><th>浏览量</th><th>独立访客</th></tr></thead><tbody></tbody></table>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>热门页面(最近 14 天)</h2>
+  <table id="pathTable"><thead><tr><th>页面</th><th>浏览量</th><th>独立访客</th></tr></thead><tbody></tbody></table>
+</div>
+
+<div class="footer">数据每日自动存档于 GitHub 仓库,永久保留 · Powered by GitHub Actions + Vercel</div>
+
+<script>
+const CAMPAIGN_DATE = "2026-07-01"; // Twitter 投放开始日
+const TW_REFS = ["t.co","twitter.com","x.com"];
+Chart.defaults.color = "#8b949e";
+Chart.defaults.borderColor = "rgba(48,54,61,.6)";
+Chart.defaults.font.family = '-apple-system,"PingFang SC",sans-serif';
+
+const fmt = n => n==null ? "–" : n.toLocaleString("zh-CN");
+
+async function load(){
+  let h;
+  try{
+    const r = await fetch("data/history.json?t=" + Date.now());
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    h = await r.json();
+  }catch(e){
+    const el = document.getElementById("err");
+    el.style.display = "block";
+    el.textContent = "数据还没生成:首次抓取由 GitHub Actions 执行,请等 workflow 跑完后刷新。(" + e.message + ")";
+    return;
+  }
+  render(h);
+}
+
+function render(h){
+  const dates = Object.keys(h.views).sort();
+  const views = dates.map(d=>h.views[d].count);
+  const vUniq = dates.map(d=>h.views[d].uniques);
+  const cDates = Object.keys(h.clones).sort();
+  const clones = cDates.map(d=>h.clones[d].count);
+  const cUniq  = cDates.map(d=>h.clones[d].uniques);
+
+  document.getElementById("updated").textContent = h.last_updated ? new Date(h.last_updated).toLocaleString("zh-CN") : "–";
+  document.getElementById("c-views").textContent  = fmt(views.reduce((a,b)=>a+b,0));
+  document.getElementById("c-uv").textContent     = fmt(vUniq.reduce((a,b)=>a+b,0));
+  document.getElementById("c-clones").textContent = fmt(clones.reduce((a,b)=>a+b,0));
+  document.getElementById("c-views-d").textContent  = "存档 " + dates.length + " 天 (" + (dates[0]||"") + " 起)";
+  document.getElementById("c-clones-d").textContent = "独立 " + fmt(cUniq.reduce((a,b)=>a+b,0));
+  const statDays = Object.keys(h.repo_stats||{}).sort();
+  if(statDays.length){
+    const s = h.repo_stats[statDays[statDays.length-1]];
+    document.getElementById("c-stars").textContent = fmt(s.stars);
+    document.getElementById("c-forks").textContent = fmt(s.forks);
+  }
+
+  const annotation = { annotations: { campaign: {
+    type:"line", scaleID:"x", value:CAMPAIGN_DATE,
+    borderColor:"#1d9bf0", borderWidth:2, borderDash:[6,4],
+    label:{display:true, content:"🐦 Twitter 投放开始", position:"start",
+      backgroundColor:"rgba(29,155,240,.85)", color:"#fff", font:{size:11}}
+  }}};
+
+  new Chart(viewsChart,{type:"line",data:{labels:dates,datasets:[
+    {label:"浏览量",data:views,borderColor:"#58a6ff",backgroundColor:"rgba(88,166,255,.15)",fill:true,tension:.3,pointRadius:3},
+    {label:"独立访客",data:vUniq,borderColor:"#3fb950",tension:.3,pointRadius:3}
+  ]},options:{maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
+    plugins:{annotation, legend:{labels:{usePointStyle:true}}},
+    scales:{y:{beginAtZero:true}}}});
+
+  new Chart(clonesChart,{type:"bar",data:{labels:cDates,datasets:[
+    {label:"Clone 次数",data:clones,backgroundColor:"rgba(188,140,255,.6)"},
+    {label:"独立 Clone",data:cUniq,backgroundColor:"rgba(210,153,34,.6)"}
+  ]},options:{maintainAspectRatio:false,plugins:{annotation},scales:{y:{beginAtZero:true}}}});
+
+  new Chart(starsChart,{type:"line",data:{labels:statDays,datasets:[
+    {label:"Stars",data:statDays.map(d=>h.repo_stats[d].stars),borderColor:"#d29922",backgroundColor:"rgba(210,153,34,.15)",fill:true,tension:.3}
+  ]},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:false}}}});
+
+  // ---- 投放前后对比 ----
+  const pre = dates.filter(d=>d<CAMPAIGN_DATE), post = dates.filter(d=>d>=CAMPAIGN_DATE);
+  const avg = (ds,src)=> ds.length ? ds.reduce((a,d)=>a+src[d].count,0)/ds.length : 0;
+  const avgU = (ds,src)=> ds.length ? ds.reduce((a,d)=>a+src[d].uniques,0)/ds.length : 0;
+  const cPre = cDates.filter(d=>d<CAMPAIGN_DATE), cPost = cDates.filter(d=>d>=CAMPAIGN_DATE);
+  const rows = [
+    ["日均浏览量", avg(pre,h.views), avg(post,h.views)],
+    ["日均独立访客", avgU(pre,h.views), avgU(post,h.views)],
+    ["日均 Clone", avg(cPre,h.clones), avg(cPost,h.clones)],
+  ];
+  compareBox.innerHTML = rows.map(([t,a,b])=>{
+    const pct = a>0 ? ((b-a)/a*100) : (b>0?100:0);
+    const cls = pct>=0?"up":"down", sign = pct>=0?"+":"";
+    return `<div class="cmp"><div class="t">${t}</div>
+      <div class="n">${a.toFixed(1)} → ${b.toFixed(1)}</div>
+      <div class="${cls}" style="font-size:13px;margin-top:4px">${sign}${pct.toFixed(0)}% ${pct>=0?"↑":"↓"}(投放前 ${pre.length} 天均值 vs 投放后 ${post.length} 天均值)</div></div>`;
+  }).join("");
+
+  // ---- 来源分析:取最新快照 ----
+  const refDays = Object.keys(h.referrer_history||{}).sort();
+  if(refDays.length){
+    const refs = h.referrer_history[refDays[refDays.length-1]].slice().sort((a,b)=>b.count-a.count);
+    const isTw = r => TW_REFS.includes(r.referrer.toLowerCase());
+    new Chart(refChart,{type:"bar",data:{labels:refs.map(r=>r.referrer),datasets:[
+      {label:"浏览量",data:refs.map(r=>r.count),backgroundColor:refs.map(r=>isTw(r)?"rgba(29,155,240,.85)":"rgba(88,166,255,.45)")},
+      {label:"独立访客",data:refs.map(r=>r.uniques),backgroundColor:refs.map(r=>isTw(r)?"rgba(29,155,240,.5)":"rgba(63,185,80,.45)")}
+    ]},options:{indexAxis:"y",maintainAspectRatio:false,scales:{x:{beginAtZero:true}}}});
+    document.querySelector("#refTable tbody").innerHTML = refs.map(r=>
+      `<tr class="${isTw(r)?"twitter":""}"><td>${isTw(r)?"🐦 ":""}${r.referrer}</td><td>${fmt(r.count)}</td><td>${fmt(r.uniques)}</td></tr>`).join("");
+  }
+
+  const pathDays = Object.keys(h.path_history||{}).sort();
+  if(pathDays.length){
+    const ps = h.path_history[pathDays[pathDays.length-1]].slice().sort((a,b)=>b.count-a.count);
+    document.querySelector("#pathTable tbody").innerHTML = ps.map(p=>
+      `<tr><td><a href="https://github.com${p.path}" target="_blank" style="color:var(--blue);text-decoration:none">${p.path}</a></td><td>${fmt(p.count)}</td><td>${fmt(p.uniques)}</td></tr>`).join("");
+  }
+}
+load();
+</script>
+</body>
+</html>
