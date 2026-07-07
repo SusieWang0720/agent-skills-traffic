@@ -12,7 +12,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = os.environ.get("TARGET_REPO", "Tencent-RTC/agent-skills")
-TOKEN = os.environ["GH_TOKEN"]
+TOKEN = os.environ.get("GH_TOKEN", "").strip()
+if not TOKEN:
+    sys.exit("错误: GH_TOKEN 为空 —— 请检查仓库 secret TRAFFIC_TOKEN 是否已正确配置(名字全大写、值无空格)")
 API = "https://api.github.com"
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
