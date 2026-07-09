@@ -7,11 +7,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 <style>
-  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#3fb950;--purple:#bc8cff;--orange:#d29922;--tw:#1d9bf0;}
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#3fb950;--purple:#bc8cff;--orange:#d29922;--tw:#1d9bf0;color-scheme:dark;}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px;max-width:1200px;margin:0 auto}
   h1{font-size:22px;margin-bottom:4px}
-  .sub{color:var(--muted);font-size:13px;margin-bottom:20px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
   .sub a{color:var(--blue);text-decoration:none}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
   .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
@@ -19,8 +19,9 @@
   .card .value{font-size:26px;font-weight:700}
   .card .delta{font-size:12px;color:var(--muted);margin-top:4px}
   .panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:20px}
-  .panel h2{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .panel h2{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .badge{font-size:11px;background:rgba(29,155,240,.15);color:var(--tw);border:1px solid rgba(29,155,240,.4);border-radius:999px;padding:2px 8px}
+  .note{font-size:11px;color:var(--muted);font-weight:400}
   .chart-box{position:relative;height:320px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   @media(max-width:800px){.grid2{grid-template-columns:1fr}}
@@ -35,6 +36,22 @@
   .up{color:var(--green)} .down{color:#f85149}
   .footer{color:var(--muted);font-size:12px;text-align:center;margin-top:8px}
   #err{display:none;background:rgba(248,81,73,.1);border:1px solid #f85149;border-radius:8px;padding:14px;margin-bottom:20px;font-size:13px}
+  /* ---- 筛选栏 ---- */
+  .filterbar{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{border:1px solid var(--border);background:transparent;color:var(--muted);border-radius:999px;padding:5px 13px;font-size:12.5px;cursor:pointer;transition:all .15s}
+  .chip:hover{border-color:var(--blue);color:var(--text)}
+  .chip.active{background:rgba(88,166,255,.15);border-color:var(--blue);color:var(--blue);font-weight:600}
+  .daterange{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+  .daterange input{background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 8px;font-size:13px;font-family:inherit}
+  .daterange input:focus{outline:none;border-color:var(--blue)}
+  .rangeinfo{font-size:12px;color:var(--muted);margin-left:auto}
+  .rangeinfo b{color:var(--text)}
+  .exports{display:flex;gap:8px}
+  .btn{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:6px;padding:6px 12px;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
+  .btn:hover{border-color:var(--green);color:var(--green)}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1f6feb;color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:9}
+  .toast.show{opacity:1}
 </style>
 </head>
 <body>
@@ -42,10 +59,29 @@
 <div class="sub">长期存档 GitHub Traffic 数据(突破官方 14 天限制)· <a href="https://github.com/Tencent-RTC/agent-skills" target="_blank">仓库地址</a> · 最后更新:<span id="updated">加载中…</span></div>
 <div id="err"></div>
 
+<div class="filterbar" id="filterbar" style="display:none">
+  <div class="chips" id="chips">
+    <button class="chip" data-preset="all">全部</button>
+    <button class="chip" data-preset="7">最近 7 天</button>
+    <button class="chip" data-preset="14">最近 14 天</button>
+    <button class="chip" data-preset="30">最近 30 天</button>
+    <button class="chip" data-preset="pre">投放前</button>
+    <button class="chip" data-preset="post">投放后</button>
+  </div>
+  <div class="daterange">
+    <input type="date" id="dFrom"> <span>至</span> <input type="date" id="dTo">
+  </div>
+  <span class="rangeinfo" id="rangeinfo"></span>
+  <div class="exports">
+    <button class="btn" id="expCsv" title="导出当前筛选区间的每日数据">⬇ 导出 CSV</button>
+    <button class="btn" id="expJson" title="导出完整原始存档">⬇ 导出 JSON</button>
+  </div>
+</div>
+
 <div class="cards">
-  <div class="card"><div class="label">累计浏览量 (Views)</div><div class="value" id="c-views">–</div><div class="delta" id="c-views-d"></div></div>
-  <div class="card"><div class="label">累计独立访客 (Unique)</div><div class="value" id="c-uv">–</div></div>
-  <div class="card"><div class="label">累计 Clone 次数</div><div class="value" id="c-clones">–</div><div class="delta" id="c-clones-d"></div></div>
+  <div class="card"><div class="label">区间浏览量 (Views)</div><div class="value" id="c-views">–</div><div class="delta" id="c-views-d"></div></div>
+  <div class="card"><div class="label">区间独立访客 (Unique)</div><div class="value" id="c-uv">–</div></div>
+  <div class="card"><div class="label">区间 Clone 次数</div><div class="value" id="c-clones">–</div><div class="delta" id="c-clones-d"></div></div>
   <div class="card"><div class="label">Stars</div><div class="value" id="c-stars">–</div></div>
   <div class="card"><div class="label">Forks</div><div class="value" id="c-forks">–</div></div>
 </div>
@@ -56,7 +92,7 @@
 </div>
 
 <div class="panel">
-  <h2>🐦 Twitter 投放效果对比(7/2 前 vs 7/2 后)</h2>
+  <h2>🐦 Twitter 投放效果对比(7/2 前 vs 7/2 后)<span class="note">固定按投放日对比,不受上方筛选影响</span></h2>
   <div class="compare" id="compareBox"></div>
 </div>
 
@@ -73,7 +109,7 @@
 
 <div class="grid2">
   <div class="panel">
-    <h2>流量来源分析(最近 14 天)</h2>
+    <h2>流量来源分析 <span class="note">GitHub 仅提供滚动 14 天汇总,不受日期筛选影响</span></h2>
     <div class="chart-box"><canvas id="refChart"></canvas></div>
   </div>
   <div class="panel">
@@ -83,57 +119,122 @@
 </div>
 
 <div class="panel">
-  <h2>热门页面(最近 14 天)</h2>
+  <h2>热门页面 <span class="note">最近 14 天汇总</span></h2>
   <table id="pathTable"><thead><tr><th>页面</th><th>浏览量</th><th>独立访客</th></tr></thead><tbody></tbody></table>
 </div>
 
 <div class="footer">数据每日自动存档于 GitHub 仓库,永久保留 · Powered by GitHub Actions + Vercel</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const CAMPAIGN_DATE = "2026-07-02"; // Twitter 投放开始日
-const TW_REFS = ["t.co","twitter.com","x.com"];
+const TW_REFS = ["t.co","twitter.com","x.com","com.twitter.android"];
 Chart.defaults.color = "#8b949e";
 Chart.defaults.borderColor = "rgba(48,54,61,.6)";
 Chart.defaults.font.family = '-apple-system,"PingFang SC",sans-serif';
 
+const $ = id => document.getElementById(id);
 const fmt = n => n==null ? "–" : n.toLocaleString("zh-CN");
+let H = null, allDates = [], charts = {};
 
 async function load(){
-  let h;
   try{
     const r = await fetch("data/history.json?t=" + Date.now());
     if(!r.ok) throw new Error("HTTP " + r.status);
-    h = await r.json();
+    H = await r.json();
   }catch(e){
-    const el = document.getElementById("err");
-    el.style.display = "block";
-    el.textContent = "数据还没生成:首次抓取由 GitHub Actions 执行,请等 workflow 跑完后刷新。(" + e.message + ")";
+    $("err").style.display = "block";
+    $("err").textContent = "数据还没生成:首次抓取由 GitHub Actions 执行,请等 workflow 跑完后刷新。(" + e.message + ")";
     return;
   }
-  render(h);
+  init();
 }
 
-function render(h){
-  const dates = Object.keys(h.views).sort();
-  const views = dates.map(d=>h.views[d].count);
-  const vUniq = dates.map(d=>h.views[d].uniques);
-  const cDates = Object.keys(h.clones).sort();
-  const clones = cDates.map(d=>h.clones[d].count);
-  const cUniq  = cDates.map(d=>h.clones[d].uniques);
+function init(){
+  allDates = [...new Set([...Object.keys(H.views), ...Object.keys(H.clones)])].sort();
+  $("updated").textContent = H.last_updated ? new Date(H.last_updated).toLocaleString("zh-CN") : "–";
+  $("filterbar").style.display = "flex";
+  const min = allDates[0], max = allDates[allDates.length-1];
+  $("dFrom").min = min; $("dFrom").max = max;
+  $("dTo").min = min;   $("dTo").max = max;
 
-  document.getElementById("updated").textContent = h.last_updated ? new Date(h.last_updated).toLocaleString("zh-CN") : "–";
-  document.getElementById("c-views").textContent  = fmt(views.reduce((a,b)=>a+b,0));
-  document.getElementById("c-uv").textContent     = fmt(vUniq.reduce((a,b)=>a+b,0));
-  document.getElementById("c-clones").textContent = fmt(clones.reduce((a,b)=>a+b,0));
-  document.getElementById("c-views-d").textContent  = "存档 " + dates.length + " 天 (" + (dates[0]||"") + " 起)";
-  document.getElementById("c-clones-d").textContent = "独立 " + fmt(cUniq.reduce((a,b)=>a+b,0));
-  const statDays = Object.keys(h.repo_stats||{}).sort();
-  if(statDays.length){
-    const s = h.repo_stats[statDays[statDays.length-1]];
-    document.getElementById("c-stars").textContent = fmt(s.stars);
-    document.getElementById("c-forks").textContent = fmt(s.forks);
-  }
+  renderStatic();
+  buildCharts();
 
+  // 恢复上次的筛选
+  let saved = null;
+  try{ saved = JSON.parse(localStorage.getItem("traffic_range")||"null"); }catch(e){}
+  if(saved && saved.from && saved.to) setRange(saved.from, saved.to, saved.preset||"custom", false);
+  else applyPreset("all");
+
+  // 事件绑定
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => applyPreset(c.dataset.preset));
+  $("dFrom").onchange = onManualDate;
+  $("dTo").onchange = onManualDate;
+  $("expCsv").onclick = exportCsv;
+  $("expJson").onclick = exportJson;
+}
+
+function onManualDate(){
+  let f = $("dFrom").value || allDates[0];
+  let t = $("dTo").value || allDates[allDates.length-1];
+  if(f > t){ [f,t] = [t,f]; } // 自动纠正顺序
+  setRange(f, t, "custom");
+}
+
+function applyPreset(p){
+  const max = allDates[allDates.length-1], min = allDates[0];
+  const shift = (d,n)=>{ const x=new Date(d+"T00:00:00Z"); x.setUTCDate(x.getUTCDate()-n+1); return x.toISOString().slice(0,10); };
+  let f=min, t=max;
+  if(p==="7") f = shift(max,7);
+  else if(p==="14") f = shift(max,14);
+  else if(p==="30") f = shift(max,30);
+  else if(p==="pre") t = shift(CAMPAIGN_DATE,2); // 投放日前一天
+  else if(p==="post") f = CAMPAIGN_DATE;
+  if(f<min) f=min; if(t>max) t=max; if(f>t) f=t;
+  setRange(f, t, p);
+}
+
+function setRange(from, to, preset, save=true){
+  $("dFrom").value = from; $("dTo").value = to;
+  document.querySelectorAll(".chip").forEach(c => c.classList.toggle("active", c.dataset.preset===preset));
+  if(save) try{ localStorage.setItem("traffic_range", JSON.stringify({from,to,preset})); }catch(e){}
+  renderRange(from, to);
+}
+
+function rangeDates(from, to){ return allDates.filter(d => d>=from && d<=to); }
+
+function renderRange(from, to){
+  const ds = rangeDates(from, to);
+  const v = d => H.views[d]  || {count:0,uniques:0};
+  const c = d => H.clones[d] || {count:0,uniques:0};
+
+  // 卡片
+  $("c-views").textContent  = fmt(ds.reduce((a,d)=>a+v(d).count,0));
+  $("c-uv").textContent     = fmt(ds.reduce((a,d)=>a+v(d).uniques,0));
+  $("c-clones").textContent = fmt(ds.reduce((a,d)=>a+c(d).count,0));
+  $("c-views-d").textContent  = ds.length ? `${ds[0]} ~ ${ds[ds.length-1]} · ${ds.length} 天` : "无数据";
+  $("c-clones-d").textContent = "独立 " + fmt(ds.reduce((a,d)=>a+c(d).uniques,0));
+  $("rangeinfo").innerHTML = `当前区间 <b>${ds.length}</b> 天`;
+
+  // 图表数据更新
+  charts.views.data.labels = ds;
+  charts.views.data.datasets[0].data = ds.map(d=>v(d).count);
+  charts.views.data.datasets[1].data = ds.map(d=>v(d).uniques);
+  charts.views.update();
+
+  charts.clones.data.labels = ds;
+  charts.clones.data.datasets[0].data = ds.map(d=>c(d).count);
+  charts.clones.data.datasets[1].data = ds.map(d=>c(d).uniques);
+  charts.clones.update();
+
+  const sDays = Object.keys(H.repo_stats||{}).sort().filter(d=>d>=from&&d<=to);
+  charts.stars.data.labels = sDays;
+  charts.stars.data.datasets[0].data = sDays.map(d=>H.repo_stats[d].stars);
+  charts.stars.update();
+}
+
+function buildCharts(){
   const annotation = { annotations: { campaign: {
     type:"line", scaleID:"x", value:CAMPAIGN_DATE,
     borderColor:"#1d9bf0", borderWidth:2, borderDash:[6,4],
@@ -141,44 +242,54 @@ function render(h){
       backgroundColor:"rgba(29,155,240,.85)", color:"#fff", font:{size:11}}
   }}};
 
-  new Chart(viewsChart,{type:"line",data:{labels:dates,datasets:[
-    {label:"浏览量",data:views,borderColor:"#58a6ff",backgroundColor:"rgba(88,166,255,.15)",fill:true,tension:.3,pointRadius:3},
-    {label:"独立访客",data:vUniq,borderColor:"#3fb950",tension:.3,pointRadius:3}
+  charts.views = new Chart(viewsChart,{type:"line",data:{labels:[],datasets:[
+    {label:"浏览量",data:[],borderColor:"#58a6ff",backgroundColor:"rgba(88,166,255,.15)",fill:true,tension:.3,pointRadius:3},
+    {label:"独立访客",data:[],borderColor:"#3fb950",tension:.3,pointRadius:3}
   ]},options:{maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
     plugins:{annotation, legend:{labels:{usePointStyle:true}}},
     scales:{y:{beginAtZero:true}}}});
 
-  new Chart(clonesChart,{type:"bar",data:{labels:cDates,datasets:[
-    {label:"Clone 次数",data:clones,backgroundColor:"rgba(188,140,255,.6)"},
-    {label:"独立 Clone",data:cUniq,backgroundColor:"rgba(210,153,34,.6)"}
+  charts.clones = new Chart(clonesChart,{type:"bar",data:{labels:[],datasets:[
+    {label:"Clone 次数",data:[],backgroundColor:"rgba(188,140,255,.6)"},
+    {label:"独立 Clone",data:[],backgroundColor:"rgba(210,153,34,.6)"}
   ]},options:{maintainAspectRatio:false,plugins:{annotation},scales:{y:{beginAtZero:true}}}});
 
-  new Chart(starsChart,{type:"line",data:{labels:statDays,datasets:[
-    {label:"Stars",data:statDays.map(d=>h.repo_stats[d].stars),borderColor:"#d29922",backgroundColor:"rgba(210,153,34,.15)",fill:true,tension:.3}
+  charts.stars = new Chart(starsChart,{type:"line",data:{labels:[],datasets:[
+    {label:"Stars",data:[],borderColor:"#d29922",backgroundColor:"rgba(210,153,34,.15)",fill:true,tension:.3}
   ]},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:false}}}});
+}
 
-  // ---- 投放前后对比 ----
+function renderStatic(){
+  // 最新 Stars/Forks
+  const statDays = Object.keys(H.repo_stats||{}).sort();
+  if(statDays.length){
+    const s = H.repo_stats[statDays[statDays.length-1]];
+    $("c-stars").textContent = fmt(s.stars);
+    $("c-forks").textContent = fmt(s.forks);
+  }
+
+  // 投放前后对比(固定,不随筛选)
+  const dates = Object.keys(H.views).sort(), cDates = Object.keys(H.clones).sort();
   const pre = dates.filter(d=>d<CAMPAIGN_DATE), post = dates.filter(d=>d>=CAMPAIGN_DATE);
-  const avg = (ds,src)=> ds.length ? ds.reduce((a,d)=>a+src[d].count,0)/ds.length : 0;
-  const avgU = (ds,src)=> ds.length ? ds.reduce((a,d)=>a+src[d].uniques,0)/ds.length : 0;
   const cPre = cDates.filter(d=>d<CAMPAIGN_DATE), cPost = cDates.filter(d=>d>=CAMPAIGN_DATE);
+  const avg = (ds,src,k)=> ds.length ? ds.reduce((a,d)=>a+src[d][k],0)/ds.length : 0;
   const rows = [
-    ["日均浏览量", avg(pre,h.views), avg(post,h.views)],
-    ["日均独立访客", avgU(pre,h.views), avgU(post,h.views)],
-    ["日均 Clone", avg(cPre,h.clones), avg(cPost,h.clones)],
+    ["日均浏览量", avg(pre,H.views,"count"), avg(post,H.views,"count"), pre.length, post.length],
+    ["日均独立访客", avg(pre,H.views,"uniques"), avg(post,H.views,"uniques"), pre.length, post.length],
+    ["日均 Clone", avg(cPre,H.clones,"count"), avg(cPost,H.clones,"count"), cPre.length, cPost.length],
   ];
-  compareBox.innerHTML = rows.map(([t,a,b])=>{
+  $("compareBox").innerHTML = rows.map(([t,a,b,np,nq])=>{
     const pct = a>0 ? ((b-a)/a*100) : (b>0?100:0);
     const cls = pct>=0?"up":"down", sign = pct>=0?"+":"";
     return `<div class="cmp"><div class="t">${t}</div>
       <div class="n">${a.toFixed(1)} → ${b.toFixed(1)}</div>
-      <div class="${cls}" style="font-size:13px;margin-top:4px">${sign}${pct.toFixed(0)}% ${pct>=0?"↑":"↓"}(投放前 ${pre.length} 天均值 vs 投放后 ${post.length} 天均值)</div></div>`;
+      <div class="${cls}" style="font-size:13px;margin-top:4px">${sign}${pct.toFixed(0)}% ${pct>=0?"↑":"↓"}(投放前 ${np} 天均值 vs 投放后 ${nq} 天均值)</div></div>`;
   }).join("");
 
-  // ---- 来源分析:取最新快照 ----
-  const refDays = Object.keys(h.referrer_history||{}).sort();
+  // 来源分析(最新快照)
+  const refDays = Object.keys(H.referrer_history||{}).sort();
   if(refDays.length){
-    const refs = h.referrer_history[refDays[refDays.length-1]].slice().sort((a,b)=>b.count-a.count);
+    const refs = H.referrer_history[refDays[refDays.length-1]].slice().sort((a,b)=>b.count-a.count);
     const isTw = r => TW_REFS.includes(r.referrer.toLowerCase());
     new Chart(refChart,{type:"bar",data:{labels:refs.map(r=>r.referrer),datasets:[
       {label:"浏览量",data:refs.map(r=>r.count),backgroundColor:refs.map(r=>isTw(r)?"rgba(29,155,240,.85)":"rgba(88,166,255,.45)")},
@@ -188,13 +299,42 @@ function render(h){
       `<tr class="${isTw(r)?"twitter":""}"><td>${isTw(r)?"🐦 ":""}${r.referrer}</td><td>${fmt(r.count)}</td><td>${fmt(r.uniques)}</td></tr>`).join("");
   }
 
-  const pathDays = Object.keys(h.path_history||{}).sort();
+  const pathDays = Object.keys(H.path_history||{}).sort();
   if(pathDays.length){
-    const ps = h.path_history[pathDays[pathDays.length-1]].slice().sort((a,b)=>b.count-a.count);
+    const ps = H.path_history[pathDays[pathDays.length-1]].slice().sort((a,b)=>b.count-a.count);
     document.querySelector("#pathTable tbody").innerHTML = ps.map(p=>
       `<tr><td><a href="https://github.com${p.path}" target="_blank" style="color:var(--blue);text-decoration:none">${p.path}</a></td><td>${fmt(p.count)}</td><td>${fmt(p.uniques)}</td></tr>`).join("");
   }
 }
+
+// ---- 导出 ----
+function download(name, content, mime){
+  const blob = new Blob([content], {type: mime});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  const t = $("toast");
+  t.textContent = "已导出 " + name;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 2200);
+}
+
+function exportCsv(){
+  const from = $("dFrom").value, to = $("dTo").value;
+  const ds = rangeDates(from, to);
+  const v = d => H.views[d]  || {count:"",uniques:""};
+  const c = d => H.clones[d] || {count:"",uniques:""};
+  let csv = "﻿日期,浏览量,独立访客,Clone次数,独立Clone\n";
+  csv += ds.map(d=>[d, v(d).count, v(d).uniques, c(d).count, c(d).uniques].join(",")).join("\n");
+  download(`agent-skills-traffic_${from}_${to}.csv`, csv, "text/csv;charset=utf-8");
+}
+
+function exportJson(){
+  download("agent-skills-traffic-full.json", JSON.stringify(H, null, 2), "application/json");
+}
+
 load();
 </script>
 </body>
