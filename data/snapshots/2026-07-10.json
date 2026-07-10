@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-07-10T04:42:19.219000+00:00",
+  "fetched_at": "2026-07-10T15:28:08.323616+00:00",
   "views": {
-    "count": 2386,
-    "uniques": 1503,
+    "count": 2430,
+    "uniques": 1550,
     "views": [
-      {
-        "timestamp": "2026-06-25T00:00:00Z",
-        "count": 53,
-        "uniques": 6
-      },
       {
         "timestamp": "2026-06-26T00:00:00Z",
         "count": 55,
@@ -73,18 +68,18 @@
         "timestamp": "2026-07-08T00:00:00Z",
         "count": 102,
         "uniques": 60
+      },
+      {
+        "timestamp": "2026-07-09T00:00:00Z",
+        "count": 97,
+        "uniques": 60
       }
     ]
   },
   "clones": {
-    "count": 286,
-    "uniques": 118,
+    "count": 284,
+    "uniques": 112,
     "clones": [
-      {
-        "timestamp": "2026-06-25T00:00:00Z",
-        "count": 47,
-        "uniques": 26
-      },
       {
         "timestamp": "2026-06-26T00:00:00Z",
         "count": 31,
@@ -149,6 +144,11 @@
         "timestamp": "2026-07-08T00:00:00Z",
         "count": 13,
         "uniques": 8
+      },
+      {
+        "timestamp": "2026-07-09T00:00:00Z",
+        "count": 45,
+        "uniques": 25
       }
     ]
   },
@@ -160,28 +160,33 @@
     },
     {
       "referrer": "x.com",
-      "count": 161,
-      "uniques": 150
+      "count": 200,
+      "uniques": 183
     },
     {
       "referrer": "github.com",
-      "count": 128,
-      "uniques": 19
+      "count": 119,
+      "uniques": 21
     },
     {
       "referrer": "Google",
-      "count": 32,
-      "uniques": 10
+      "count": 35,
+      "uniques": 12
     },
     {
       "referrer": "t.co",
-      "count": 29,
-      "uniques": 13
+      "count": 33,
+      "uniques": 16
+    },
+    {
+      "referrer": "agent-skills-traffic.vercel.app",
+      "count": 7,
+      "uniques": 4
     },
     {
       "referrer": "cloud.tencent.com",
-      "count": 9,
-      "uniques": 4
+      "count": 7,
+      "uniques": 3
     },
     {
       "referrer": "trtc.io",
@@ -192,66 +197,56 @@
       "referrer": "linkedin.com",
       "count": 5,
       "uniques": 5
-    },
-    {
-      "referrer": "agent-skills-traffic.vercel.app",
-      "count": 4,
-      "uniques": 2
-    },
-    {
-      "referrer": "tencentcloud.com",
-      "count": 1,
-      "uniques": 1
     }
   ],
   "paths": [
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
       "title": "/tree/main/skills/trtc-ai-service",
-      "count": 1665,
-      "uniques": 1432
+      "count": 1720,
+      "uniques": 1480
     },
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 187,
-      "uniques": 55
+      "count": 183,
+      "uniques": 57
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills",
       "title": "/tree/main/skills",
-      "count": 68,
-      "uniques": 26
+      "count": 72,
+      "uniques": 27
     },
     {
       "path": "/Tencent-RTC/agent-skills/pulse",
       "title": "/pulse",
-      "count": 36,
+      "count": 38,
       "uniques": 5
     },
     {
       "path": "/Tencent-RTC/agent-skills/graphs/traffic",
       "title": "/graphs/traffic",
-      "count": 32,
+      "count": 35,
       "uniques": 5
     },
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
-      "count": 29,
-      "uniques": 16
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/pulls",
-      "title": "/pulls",
       "count": 27,
-      "uniques": 6
+      "uniques": 16
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main",
       "title": "/tree/main",
+      "count": 25,
+      "uniques": 14
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulls",
+      "title": "/pulls",
       "count": 21,
-      "uniques": 12
+      "uniques": 6
     },
     {
       "path": "/Tencent-RTC/agent-skills/pull/11",
@@ -262,7 +257,7 @@
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.zh-CN.md",
       "title": "/blob/main/skills/trtc-ai-service/README.zh-CN.md",
-      "count": 15,
+      "count": 16,
       "uniques": 10
     }
   ],
