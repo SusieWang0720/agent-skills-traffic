@@ -193,11 +193,8 @@ function init(){
   renderStatic();
   buildCharts();
 
-  // 恢复上次的筛选
-  let saved = null;
-  try{ saved = JSON.parse(localStorage.getItem("traffic_range")||"null"); }catch(e){}
-  if(saved && saved.from && saved.to) setRange(saved.from, saved.to, saved.preset||"custom", false);
-  else applyPreset("all");
+  // 每次打开默认显示全部数据
+  applyPreset("all");
 
   // 事件绑定
   document.querySelectorAll(".chip").forEach(c => c.onclick = () => applyPreset(c.dataset.preset));
@@ -227,10 +224,9 @@ function applyPreset(p){
   setRange(f, t, p);
 }
 
-function setRange(from, to, preset, save=true){
+function setRange(from, to, preset){
   $("dFrom").value = from; $("dTo").value = to;
   document.querySelectorAll(".chip").forEach(c => c.classList.toggle("active", c.dataset.preset===preset));
-  if(save) try{ localStorage.setItem("traffic_range", JSON.stringify({from,to,preset})); }catch(e){}
   renderRange(from, to);
 }
 
