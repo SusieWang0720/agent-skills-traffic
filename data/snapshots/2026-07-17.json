@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-07-17T03:54:06.288362+00:00",
+  "fetched_at": "2026-07-17T14:27:07.973791+00:00",
   "views": {
-    "count": 2457,
+    "count": 2443,
     "uniques": 1725,
     "views": [
-      {
-        "timestamp": "2026-07-02T00:00:00Z",
-        "count": 40,
-        "uniques": 12
-      },
       {
         "timestamp": "2026-07-03T00:00:00Z",
         "count": 295,
@@ -73,18 +68,18 @@
         "timestamp": "2026-07-15T00:00:00Z",
         "count": 27,
         "uniques": 12
+      },
+      {
+        "timestamp": "2026-07-16T00:00:00Z",
+        "count": 26,
+        "uniques": 7
       }
     ]
   },
   "clones": {
-    "count": 359,
-    "uniques": 85,
+    "count": 401,
+    "uniques": 96,
     "clones": [
-      {
-        "timestamp": "2026-07-02T00:00:00Z",
-        "count": 8,
-        "uniques": 5
-      },
       {
         "timestamp": "2026-07-03T00:00:00Z",
         "count": 9,
@@ -149,6 +144,11 @@
         "timestamp": "2026-07-15T00:00:00Z",
         "count": 33,
         "uniques": 10
+      },
+      {
+        "timestamp": "2026-07-16T00:00:00Z",
+        "count": 50,
+        "uniques": 24
       }
     ]
   },
@@ -165,18 +165,18 @@
     },
     {
       "referrer": "github.com",
-      "count": 66,
+      "count": 60,
       "uniques": 15
     },
     {
       "referrer": "t.co",
-      "count": 35,
-      "uniques": 26
+      "count": 34,
+      "uniques": 25
     },
     {
       "referrer": "Google",
-      "count": 24,
-      "uniques": 11
+      "count": 18,
+      "uniques": 7
     },
     {
       "referrer": "agent-skills-traffic.vercel.app",
@@ -185,8 +185,8 @@
     },
     {
       "referrer": "trtc.io",
-      "count": 8,
-      "uniques": 4
+      "count": 7,
+      "uniques": 3
     },
     {
       "referrer": "cloud.tencent.com",
@@ -194,47 +194,52 @@
       "uniques": 1
     },
     {
-      "referrer": "linkedin.com",
+      "referrer": "intl.cloud.tencent.com",
       "count": 5,
-      "uniques": 5
+      "uniques": 1
+    },
+    {
+      "referrer": "linkedin.com",
+      "count": 4,
+      "uniques": 4
     }
   ],
   "paths": [
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
       "title": "/tree/main/skills/trtc-ai-service",
-      "count": 1899,
+      "count": 1895,
       "uniques": 1626
     },
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 136,
+      "count": 128,
       "uniques": 44
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills",
       "title": "/tree/main/skills",
       "count": 67,
-      "uniques": 27
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/pulse",
-      "title": "/pulse",
-      "count": 38,
-      "uniques": 5
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/graphs/traffic",
-      "title": "/graphs/traffic",
-      "count": 36,
-      "uniques": 5
+      "uniques": 28
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-oral-coach",
       "title": "/tree/main/skills/trtc-ai-oral-coach",
-      "count": 34,
-      "uniques": 18
+      "count": 35,
+      "uniques": 19
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/graphs/traffic",
+      "title": "/graphs/traffic",
+      "count": 33,
+      "uniques": 4
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulse",
+      "title": "/pulse",
+      "count": 32,
+      "uniques": 4
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main",
@@ -245,13 +250,13 @@
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
-      "count": 23,
+      "count": 25,
       "uniques": 13
     },
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.md",
       "title": "/blob/main/skills/trtc-ai-service/README.md",
-      "count": 17,
+      "count": 19,
       "uniques": 6
     },
     {
