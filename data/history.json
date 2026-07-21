@@ -112,6 +112,10 @@
     "2026-07-19": {
       "count": 4,
       "uniques": 4
+    },
+    "2026-07-20": {
+      "count": 63,
+      "uniques": 16
     }
   },
   "clones": {
@@ -226,6 +230,10 @@
     "2026-07-19": {
       "count": 4,
       "uniques": 3
+    },
+    "2026-07-20": {
+      "count": 22,
+      "uniques": 11
     }
   },
   "referrer_history": {
@@ -920,28 +928,33 @@
     "2026-07-21": [
       {
         "referrer": "x.com",
-        "count": 277,
-        "uniques": 252
+        "count": 251,
+        "uniques": 228
       },
       {
         "referrer": "com.twitter.android",
-        "count": 136,
-        "uniques": 112
+        "count": 45,
+        "uniques": 40
       },
       {
         "referrer": "github.com",
-        "count": 57,
+        "count": 42,
         "uniques": 12
       },
       {
+        "referrer": "tencentcloud.com",
+        "count": 27,
+        "uniques": 2
+      },
+      {
         "referrer": "t.co",
-        "count": 28,
-        "uniques": 21
+        "count": 26,
+        "uniques": 20
       },
       {
         "referrer": "Google",
-        "count": 16,
-        "uniques": 5
+        "count": 10,
+        "uniques": 6
       },
       {
         "referrer": "agent-skills-traffic.vercel.app",
@@ -950,7 +963,7 @@
       },
       {
         "referrer": "cloud.tencent.com",
-        "count": 6,
+        "count": 7,
         "uniques": 1
       },
       {
@@ -962,11 +975,6 @@
         "referrer": "trtc.io",
         "count": 2,
         "uniques": 2
-      },
-      {
-        "referrer": "linkedin.com",
-        "count": 1,
-        "uniques": 1
       }
     ]
   },
@@ -1843,20 +1851,14 @@
       {
         "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
         "title": "/tree/main/skills/trtc-ai-service",
-        "count": 853,
-        "uniques": 740
+        "count": 510,
+        "uniques": 435
       },
       {
         "path": "/Tencent-RTC/agent-skills",
         "title": "Overview",
-        "count": 115,
-        "uniques": 34
-      },
-      {
-        "path": "/Tencent-RTC/agent-skills/tree/main/skills",
-        "title": "/tree/main/skills",
-        "count": 56,
-        "uniques": 18
+        "count": 111,
+        "uniques": 37
       },
       {
         "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-oral-coach",
@@ -1865,40 +1867,46 @@
         "uniques": 23
       },
       {
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+        "title": "/tree/main/skills",
+        "count": 38,
+        "uniques": 18
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main",
+        "title": "/tree/main",
+        "count": 21,
+        "uniques": 12
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.md",
+        "title": "/blob/main/skills/trtc-ai-service/README.md",
+        "count": 21,
+        "uniques": 5
+      },
+      {
         "path": "/Tencent-RTC/agent-skills/graphs/traffic",
         "title": "/graphs/traffic",
-        "count": 32,
+        "count": 21,
         "uniques": 4
       },
       {
         "path": "/Tencent-RTC/agent-skills/pulse",
         "title": "/pulse",
-        "count": 29,
+        "count": 19,
         "uniques": 4
-      },
-      {
-        "path": "/Tencent-RTC/agent-skills/tree/main",
-        "title": "/tree/main",
-        "count": 26,
-        "uniques": 15
       },
       {
         "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
         "title": "/blob/main/README.zh.md",
-        "count": 23,
+        "count": 18,
         "uniques": 11
-      },
-      {
-        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.md",
-        "title": "/blob/main/skills/trtc-ai-service/README.md",
-        "count": 17,
-        "uniques": 5
       },
       {
         "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.zh-CN.md",
         "title": "/blob/main/skills/trtc-ai-service/README.zh-CN.md",
-        "count": 10,
-        "uniques": 4
+        "count": 9,
+        "uniques": 3
       }
     ]
   },
@@ -1960,9 +1968,9 @@
       "forks": 7
     },
     "2026-07-21": {
-      "stars": 9,
+      "stars": 11,
       "forks": 7
     }
   },
-  "last_updated": "2026-07-21T04:08:51.663427+00:00"
+  "last_updated": "2026-07-21T14:59:01.741363+00:00"
 }
