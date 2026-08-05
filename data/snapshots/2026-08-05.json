@@ -1,0 +1,271 @@
+{
+  "fetched_at": "2026-08-05T03:51:45.210991+00:00",
+  "views": {
+    "count": 1410,
+    "uniques": 1011,
+    "views": [
+      {
+        "timestamp": "2026-07-21T00:00:00Z",
+        "count": 215,
+        "uniques": 150
+      },
+      {
+        "timestamp": "2026-07-22T00:00:00Z",
+        "count": 304,
+        "uniques": 235
+      },
+      {
+        "timestamp": "2026-07-23T00:00:00Z",
+        "count": 241,
+        "uniques": 198
+      },
+      {
+        "timestamp": "2026-07-24T00:00:00Z",
+        "count": 264,
+        "uniques": 219
+      },
+      {
+        "timestamp": "2026-07-25T00:00:00Z",
+        "count": 193,
+        "uniques": 175
+      },
+      {
+        "timestamp": "2026-07-26T00:00:00Z",
+        "count": 11,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-07-27T00:00:00Z",
+        "count": 38,
+        "uniques": 12
+      },
+      {
+        "timestamp": "2026-07-28T00:00:00Z",
+        "count": 30,
+        "uniques": 9
+      },
+      {
+        "timestamp": "2026-07-29T00:00:00Z",
+        "count": 24,
+        "uniques": 10
+      },
+      {
+        "timestamp": "2026-07-30T00:00:00Z",
+        "count": 21,
+        "uniques": 9
+      },
+      {
+        "timestamp": "2026-07-31T00:00:00Z",
+        "count": 32,
+        "uniques": 17
+      },
+      {
+        "timestamp": "2026-08-01T00:00:00Z",
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-02T00:00:00Z",
+        "count": 7,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-08-03T00:00:00Z",
+        "count": 25,
+        "uniques": 9
+      }
+    ]
+  },
+  "clones": {
+    "count": 297,
+    "uniques": 66,
+    "clones": [
+      {
+        "timestamp": "2026-07-21T00:00:00Z",
+        "count": 53,
+        "uniques": 17
+      },
+      {
+        "timestamp": "2026-07-22T00:00:00Z",
+        "count": 24,
+        "uniques": 10
+      },
+      {
+        "timestamp": "2026-07-23T00:00:00Z",
+        "count": 23,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-07-24T00:00:00Z",
+        "count": 17,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-07-25T00:00:00Z",
+        "count": 6,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-07-26T00:00:00Z",
+        "count": 6,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-07-27T00:00:00Z",
+        "count": 29,
+        "uniques": 13
+      },
+      {
+        "timestamp": "2026-07-28T00:00:00Z",
+        "count": 18,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-07-29T00:00:00Z",
+        "count": 12,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-07-30T00:00:00Z",
+        "count": 41,
+        "uniques": 18
+      },
+      {
+        "timestamp": "2026-07-31T00:00:00Z",
+        "count": 23,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-08-01T00:00:00Z",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-08-02T00:00:00Z",
+        "count": 10,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-03T00:00:00Z",
+        "count": 32,
+        "uniques": 17
+      }
+    ]
+  },
+  "referrers": [
+    {
+      "referrer": "x.com",
+      "count": 563,
+      "uniques": 512
+    },
+    {
+      "referrer": "github.com",
+      "count": 19,
+      "uniques": 10
+    },
+    {
+      "referrer": "Google",
+      "count": 14,
+      "uniques": 9
+    },
+    {
+      "referrer": "t.co",
+      "count": 11,
+      "uniques": 10
+    },
+    {
+      "referrer": "Bing",
+      "count": 7,
+      "uniques": 1
+    },
+    {
+      "referrer": "trtc.io",
+      "count": 4,
+      "uniques": 3
+    },
+    {
+      "referrer": "DuckDuckGo",
+      "count": 3,
+      "uniques": 1
+    },
+    {
+      "referrer": "cloud.tencent.com",
+      "count": 2,
+      "uniques": 1
+    },
+    {
+      "referrer": "trtc-iot-landing.vercel.app",
+      "count": 2,
+      "uniques": 1
+    },
+    {
+      "referrer": "com.twitter.android",
+      "count": 1,
+      "uniques": 1
+    }
+  ],
+  "paths": [
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-oral-coach",
+      "title": "/tree/main/skills/trtc-ai-oral-coach",
+      "count": 1098,
+      "uniques": 943
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills",
+      "title": "Overview",
+      "count": 94,
+      "uniques": 36
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+      "title": "/tree/main/skills",
+      "count": 24,
+      "uniques": 19
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
+      "title": "/blob/main/README.zh.md",
+      "count": 24,
+      "uniques": 16
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulse",
+      "title": "/pulse",
+      "count": 20,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/graphs/traffic",
+      "title": "/graphs/traffic",
+      "count": 13,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main",
+      "title": "/tree/main",
+      "count": 12,
+      "uniques": 10
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
+      "title": "/tree/main/skills/trtc-ai-service",
+      "count": 11,
+      "uniques": 11
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulls",
+      "title": "/pulls",
+      "count": 9,
+      "uniques": 4
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/tools/reporting_v2.py",
+      "title": "/blob/main/tools/reporting_v2.py",
+      "count": 7,
+      "uniques": 1
+    }
+  ],
+  "stars": 11,
+  "forks": 7
+}
