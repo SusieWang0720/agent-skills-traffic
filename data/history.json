@@ -2563,6 +2563,48 @@
         "count": 1,
         "uniques": 1
       }
+    ],
+    "2026-08-18": [
+      {
+        "referrer": "trtc.io",
+        "count": 27,
+        "uniques": 11
+      },
+      {
+        "referrer": "x.com",
+        "count": 27,
+        "uniques": 10
+      },
+      {
+        "referrer": "pre.trtc.io",
+        "count": 17,
+        "uniques": 4
+      },
+      {
+        "referrer": "Google",
+        "count": 12,
+        "uniques": 10
+      },
+      {
+        "referrer": "github.com",
+        "count": 8,
+        "uniques": 6
+      },
+      {
+        "referrer": "tapd.woa.com",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "referrer": "cloud.tencent.com",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "referrer": "Baidu",
+        "count": 1,
+        "uniques": 1
+      }
     ]
   },
   "path_history": {
@@ -5169,6 +5211,68 @@
         "count": 4,
         "uniques": 3
       }
+    ],
+    "2026-08-18": [
+      {
+        "path": "/Tencent-RTC/agent-skills",
+        "title": "Overview",
+        "count": 76,
+        "uniques": 40
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-oral-coach",
+        "title": "/tree/main/skills/trtc-ai-oral-coach",
+        "count": 32,
+        "uniques": 15
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
+        "title": "/blob/main/README.zh.md",
+        "count": 15,
+        "uniques": 9
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-oral-coach/README.md",
+        "title": "/blob/main/skills/trtc-ai-oral-coach/README.md",
+        "count": 11,
+        "uniques": 5
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/graphs/traffic",
+        "title": "/graphs/traffic",
+        "count": 9,
+        "uniques": 3
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/pulse",
+        "title": "/pulse",
+        "count": 9,
+        "uniques": 3
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-service/README.md",
+        "title": "/blob/main/skills/trtc-ai-service/README.md",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main",
+        "title": "/tree/main",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
+        "title": "/tree/main/skills/trtc-ai-service",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/0d5320b99059c456839ce14e94a2f320f7feaff1/skills/trtc/tools/docsbot.py",
+        "title": "/blob/0d5320b99059c456839ce14e94a2f320f7feaff1/skills/trtc/tools/docsbot.py",
+        "count": 4,
+        "uniques": 3
+      }
     ]
   },
   "repo_stats": {
@@ -5339,7 +5443,11 @@
     "2026-08-17": {
       "stars": 12,
       "forks": 7
+    },
+    "2026-08-18": {
+      "stars": 12,
+      "forks": 7
     }
   },
-  "last_updated": "2026-08-17T13:33:36.222113+00:00"
+  "last_updated": "2026-08-18T02:08:08.337786+00:00"
 }
