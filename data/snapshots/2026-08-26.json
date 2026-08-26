@@ -1,0 +1,251 @@
+{
+  "fetched_at": "2026-08-26T02:17:12.703007+00:00",
+  "views": {
+    "count": 187,
+    "uniques": 63,
+    "views": [
+      {
+        "timestamp": "2026-08-11T00:00:00Z",
+        "count": 17,
+        "uniques": 10
+      },
+      {
+        "timestamp": "2026-08-12T00:00:00Z",
+        "count": 18,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-08-13T00:00:00Z",
+        "count": 7,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-08-14T00:00:00Z",
+        "count": 24,
+        "uniques": 7
+      },
+      {
+        "timestamp": "2026-08-15T00:00:00Z",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-08-16T00:00:00Z",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "timestamp": "2026-08-17T00:00:00Z",
+        "count": 18,
+        "uniques": 9
+      },
+      {
+        "timestamp": "2026-08-18T00:00:00Z",
+        "count": 16,
+        "uniques": 7
+      },
+      {
+        "timestamp": "2026-08-19T00:00:00Z",
+        "count": 22,
+        "uniques": 9
+      },
+      {
+        "timestamp": "2026-08-20T00:00:00Z",
+        "count": 13,
+        "uniques": 10
+      },
+      {
+        "timestamp": "2026-08-21T00:00:00Z",
+        "count": 18,
+        "uniques": 7
+      },
+      {
+        "timestamp": "2026-08-22T00:00:00Z",
+        "count": 7,
+        "uniques": 7
+      },
+      {
+        "timestamp": "2026-08-23T00:00:00Z",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-08-24T00:00:00Z",
+        "count": 19,
+        "uniques": 7
+      }
+    ]
+  },
+  "clones": {
+    "count": 264,
+    "uniques": 71,
+    "clones": [
+      {
+        "timestamp": "2026-08-11T00:00:00Z",
+        "count": 28,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-08-12T00:00:00Z",
+        "count": 16,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-08-13T00:00:00Z",
+        "count": 25,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-08-14T00:00:00Z",
+        "count": 23,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-08-15T00:00:00Z",
+        "count": 6,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-08-16T00:00:00Z",
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-17T00:00:00Z",
+        "count": 12,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-08-18T00:00:00Z",
+        "count": 28,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-08-19T00:00:00Z",
+        "count": 13,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-08-20T00:00:00Z",
+        "count": 18,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-08-21T00:00:00Z",
+        "count": 34,
+        "uniques": 18
+      },
+      {
+        "timestamp": "2026-08-22T00:00:00Z",
+        "count": 7,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-23T00:00:00Z",
+        "count": 7,
+        "uniques": 5
+      },
+      {
+        "timestamp": "2026-08-24T00:00:00Z",
+        "count": 42,
+        "uniques": 9
+      }
+    ]
+  },
+  "referrers": [
+    {
+      "referrer": "trtc.io",
+      "count": 24,
+      "uniques": 8
+    },
+    {
+      "referrer": "github.com",
+      "count": 23,
+      "uniques": 4
+    },
+    {
+      "referrer": "Google",
+      "count": 20,
+      "uniques": 8
+    },
+    {
+      "referrer": "x.com",
+      "count": 8,
+      "uniques": 3
+    },
+    {
+      "referrer": "cloud.tencent.com",
+      "count": 3,
+      "uniques": 1
+    },
+    {
+      "referrer": "Bing",
+      "count": 1,
+      "uniques": 1
+    }
+  ],
+  "paths": [
+    {
+      "path": "/Tencent-RTC/agent-skills",
+      "title": "Overview",
+      "count": 69,
+      "uniques": 40
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-oral-coach",
+      "title": "/tree/main/skills/trtc-ai-oral-coach",
+      "count": 13,
+      "uniques": 8
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
+      "title": "/blob/main/README.zh.md",
+      "count": 12,
+      "uniques": 9
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulse",
+      "title": "/pulse",
+      "count": 11,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulls",
+      "title": "/pulls",
+      "count": 8,
+      "uniques": 4
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/graphs/traffic",
+      "title": "/graphs/traffic",
+      "count": 8,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+      "title": "/tree/main/skills",
+      "count": 7,
+      "uniques": 2
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main",
+      "title": "/tree/main",
+      "count": 5,
+      "uniques": 2
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/0d5320b99059c456839ce14e94a2f320f7feaff1/skills/trtc/tools/docsbot.py",
+      "title": "/blob/0d5320b99059c456839ce14e94a2f320f7feaff1/skills/trtc/tools/docsbot.py",
+      "count": 4,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/CODEBUDDY.md",
+      "title": "/blob/main/CODEBUDDY.md",
+      "count": 3,
+      "uniques": 3
+    }
+  ],
+  "stars": 12,
+  "forks": 7
+}
