@@ -4746,6 +4746,28 @@
         "count": 1,
         "uniques": 1
       }
+    ],
+    "2026-10-09": [
+      {
+        "referrer": "trtc.io",
+        "count": 8,
+        "uniques": 6
+      },
+      {
+        "referrer": "Google",
+        "count": 7,
+        "uniques": 7
+      },
+      {
+        "referrer": "github.com",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "referrer": "tencentcloud.com",
+        "count": 1,
+        "uniques": 1
+      }
     ]
   },
   "path_history": {
@@ -10576,6 +10598,68 @@
         "count": 2,
         "uniques": 2
       }
+    ],
+    "2026-10-09": [
+      {
+        "path": "/Tencent-RTC/agent-skills",
+        "title": "Overview",
+        "count": 53,
+        "uniques": 40
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
+        "title": "/blob/main/README.zh.md",
+        "count": 17,
+        "uniques": 10
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
+        "title": "/blob/main/README.md",
+        "count": 9,
+        "uniques": 5
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/discussions",
+        "title": "/discussions",
+        "count": 7,
+        "uniques": 4
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main",
+        "title": "/tree/main",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main/.codebuddy-plugin",
+        "title": "/tree/main/.codebuddy-plugin",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+        "title": "/tree/main/skills",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/.codebuddy-plugin/marketplace.json",
+        "title": "/blob/main/.codebuddy-plugin/marketplace.json",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/AGENTS.md",
+        "title": "/blob/main/AGENTS.md",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "path": "/Tencent-RTC/agent-skills/blob/main/CLAUDE.md",
+        "title": "/blob/main/CLAUDE.md",
+        "count": 2,
+        "uniques": 2
+      }
     ]
   },
   "repo_stats": {
@@ -10954,7 +11038,11 @@
     "2026-10-08": {
       "stars": 14,
       "forks": 8
+    },
+    "2026-10-09": {
+      "stars": 14,
+      "forks": 8
     }
   },
-  "last_updated": "2026-10-08T19:05:37.856897+00:00"
+  "last_updated": "2026-10-09T06:53:48.020943+00:00"
 }
