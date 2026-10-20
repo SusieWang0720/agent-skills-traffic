@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-10-20T05:28:27.112853+00:00",
+  "fetched_at": "2026-10-20T17:41:17.924361+00:00",
   "views": {
-    "count": 141,
-    "uniques": 57,
+    "count": 139,
+    "uniques": 54,
     "views": [
-      {
-        "timestamp": "2026-10-05T00:00:00Z",
-        "count": 7,
-        "uniques": 4
-      },
       {
         "timestamp": "2026-10-06T00:00:00Z",
         "count": 15,
@@ -73,18 +68,18 @@
         "timestamp": "2026-10-18T00:00:00Z",
         "count": 3,
         "uniques": 2
+      },
+      {
+        "timestamp": "2026-10-19T00:00:00Z",
+        "count": 5,
+        "uniques": 5
       }
     ]
   },
   "clones": {
-    "count": 166,
-    "uniques": 61,
+    "count": 170,
+    "uniques": 58,
     "clones": [
-      {
-        "timestamp": "2026-10-05T00:00:00Z",
-        "count": 10,
-        "uniques": 9
-      },
       {
         "timestamp": "2026-10-06T00:00:00Z",
         "count": 5,
@@ -149,6 +144,11 @@
         "timestamp": "2026-10-18T00:00:00Z",
         "count": 30,
         "uniques": 10
+      },
+      {
+        "timestamp": "2026-10-19T00:00:00Z",
+        "count": 14,
+        "uniques": 7
       }
     ]
   },
@@ -160,7 +160,7 @@
     },
     {
       "referrer": "trtc.io",
-      "count": 6,
+      "count": 7,
       "uniques": 6
     },
     {
@@ -179,6 +179,11 @@
       "uniques": 2
     },
     {
+      "referrer": "Baidu",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "tencentcloud.com",
       "count": 1,
       "uniques": 1
@@ -188,20 +193,14 @@
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 52,
-      "uniques": 42
+      "count": 55,
+      "uniques": 43
     },
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
       "count": 15,
-      "uniques": 10
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
-      "title": "/blob/main/README.md",
-      "count": 7,
-      "uniques": 4
+      "uniques": 9
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main",
@@ -214,6 +213,12 @@
       "title": "/discussions",
       "count": 5,
       "uniques": 4
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 4,
+      "uniques": 3
     },
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/.codebuddy-plugin/marketplace.json",
