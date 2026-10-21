@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-10-21T05:28:50.096863+00:00",
+  "fetched_at": "2026-10-21T17:48:12.772112+00:00",
   "views": {
-    "count": 139,
-    "uniques": 54,
+    "count": 133,
+    "uniques": 56,
     "views": [
-      {
-        "timestamp": "2026-10-06T00:00:00Z",
-        "count": 15,
-        "uniques": 6
-      },
       {
         "timestamp": "2026-10-07T00:00:00Z",
         "count": 17,
@@ -73,18 +68,18 @@
         "timestamp": "2026-10-19T00:00:00Z",
         "count": 5,
         "uniques": 5
+      },
+      {
+        "timestamp": "2026-10-20T00:00:00Z",
+        "count": 9,
+        "uniques": 9
       }
     ]
   },
   "clones": {
-    "count": 170,
-    "uniques": 58,
+    "count": 177,
+    "uniques": 63,
     "clones": [
-      {
-        "timestamp": "2026-10-06T00:00:00Z",
-        "count": 5,
-        "uniques": 3
-      },
       {
         "timestamp": "2026-10-07T00:00:00Z",
         "count": 14,
@@ -149,19 +144,24 @@
         "timestamp": "2026-10-19T00:00:00Z",
         "count": 14,
         "uniques": 7
+      },
+      {
+        "timestamp": "2026-10-20T00:00:00Z",
+        "count": 12,
+        "uniques": 8
       }
     ]
   },
   "referrers": [
     {
       "referrer": "Google",
-      "count": 7,
-      "uniques": 7
+      "count": 8,
+      "uniques": 8
     },
     {
       "referrer": "trtc.io",
-      "count": 7,
-      "uniques": 6
+      "count": 8,
+      "uniques": 7
     },
     {
       "referrer": "github.com",
@@ -200,7 +200,7 @@
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
       "count": 15,
-      "uniques": 9
+      "uniques": 10
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main",
@@ -211,12 +211,6 @@
     {
       "path": "/Tencent-RTC/agent-skills/discussions",
       "title": "/discussions",
-      "count": 5,
-      "uniques": 4
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
-      "title": "/blob/main/README.md",
       "count": 4,
       "uniques": 3
     },
@@ -249,6 +243,12 @@
       "title": "/tree/main/skills",
       "count": 3,
       "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/.claude/skills",
+      "title": "/tree/main/.claude/skills",
+      "count": 3,
+      "uniques": 1
     }
   ],
   "stars": 14,
