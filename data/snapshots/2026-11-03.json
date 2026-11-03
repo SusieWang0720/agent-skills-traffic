@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-11-03T07:20:22.309327+00:00",
+  "fetched_at": "2026-11-03T19:54:37.000246+00:00",
   "views": {
-    "count": 260,
-    "uniques": 131,
+    "count": 265,
+    "uniques": 134,
     "views": [
-      {
-        "timestamp": "2026-10-19T00:00:00Z",
-        "count": 5,
-        "uniques": 5
-      },
       {
         "timestamp": "2026-10-20T00:00:00Z",
         "count": 9,
@@ -73,18 +68,18 @@
         "timestamp": "2026-11-01T00:00:00Z",
         "count": 5,
         "uniques": 5
+      },
+      {
+        "timestamp": "2026-11-02T00:00:00Z",
+        "count": 10,
+        "uniques": 8
       }
     ]
   },
   "clones": {
-    "count": 376,
-    "uniques": 82,
+    "count": 378,
+    "uniques": 80,
     "clones": [
-      {
-        "timestamp": "2026-10-19T00:00:00Z",
-        "count": 14,
-        "uniques": 7
-      },
       {
         "timestamp": "2026-10-20T00:00:00Z",
         "count": 12,
@@ -149,14 +144,19 @@
         "timestamp": "2026-11-01T00:00:00Z",
         "count": 2,
         "uniques": 2
+      },
+      {
+        "timestamp": "2026-11-02T00:00:00Z",
+        "count": 16,
+        "uniques": 8
       }
     ]
   },
   "referrers": [
     {
       "referrer": "Google",
-      "count": 6,
-      "uniques": 6
+      "count": 7,
+      "uniques": 7
     },
     {
       "referrer": "aocr.org",
@@ -164,27 +164,22 @@
       "uniques": 6
     },
     {
+      "referrer": "github.com",
+      "count": 6,
+      "uniques": 5
+    },
+    {
       "referrer": "linux.do",
       "count": 6,
       "uniques": 5
     },
     {
-      "referrer": "github.com",
-      "count": 4,
-      "uniques": 4
-    },
-    {
-      "referrer": "trtc.io",
-      "count": 2,
-      "uniques": 2
-    },
-    {
-      "referrer": "Baidu",
+      "referrer": "t.co",
       "count": 1,
       "uniques": 1
     },
     {
-      "referrer": "t.co",
+      "referrer": "trtc.io",
       "count": 1,
       "uniques": 1
     }
@@ -193,13 +188,13 @@
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 52,
-      "uniques": 37
+      "count": 55,
+      "uniques": 38
     },
     {
       "path": "/Tencent-RTC/agent-skills/issues/33",
       "title": "/issues/33",
-      "count": 33,
+      "count": 34,
       "uniques": 19
     },
     {
