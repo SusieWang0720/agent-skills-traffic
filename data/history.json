@@ -540,6 +540,10 @@
     "2026-11-03": {
       "count": 11,
       "uniques": 8
+    },
+    "2026-11-04": {
+      "count": 33,
+      "uniques": 20
     }
   },
   "clones": {
@@ -1082,6 +1086,10 @@
     "2026-11-03": {
       "count": 21,
       "uniques": 13
+    },
+    "2026-11-04": {
+      "count": 79,
+      "uniques": 14
     }
   },
   "referrer_history": {
@@ -5860,8 +5868,8 @@
     "2026-11-05": [
       {
         "referrer": "Google",
-        "count": 9,
-        "uniques": 9
+        "count": 10,
+        "uniques": 10
       },
       {
         "referrer": "aocr.org",
@@ -13392,8 +13400,8 @@
       {
         "path": "/Tencent-RTC/agent-skills",
         "title": "Overview",
-        "count": 57,
-        "uniques": 41
+        "count": 60,
+        "uniques": 42
       },
       {
         "path": "/Tencent-RTC/agent-skills/issues/33",
@@ -13404,20 +13412,20 @@
       {
         "path": "/Tencent-RTC/agent-skills/pulse",
         "title": "/pulse",
-        "count": 12,
+        "count": 13,
         "uniques": 3
       },
       {
         "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
         "title": "/blob/main/README.zh.md",
-        "count": 11,
-        "uniques": 10
+        "count": 10,
+        "uniques": 9
       },
       {
         "path": "/Tencent-RTC/agent-skills/tree/main",
         "title": "/tree/main",
-        "count": 11,
-        "uniques": 6
+        "count": 8,
+        "uniques": 4
       },
       {
         "path": "/Tencent-RTC/agent-skills/issues",
@@ -13432,6 +13440,12 @@
         "uniques": 5
       },
       {
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+        "title": "/tree/main/skills",
+        "count": 5,
+        "uniques": 3
+      },
+      {
         "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/SKILL.md",
         "title": "/blob/main/skills/trtc-push/SKILL.md",
         "count": 4,
@@ -13442,12 +13456,6 @@
         "title": "/blob/main/README.md",
         "count": 3,
         "uniques": 3
-      },
-      {
-        "path": "/Tencent-RTC/agent-skills/graphs/contributors",
-        "title": "/graphs/contributors",
-        "count": 3,
-        "uniques": 2
       }
     ]
   },
@@ -13941,5 +13949,5 @@
       "forks": 9
     }
   },
-  "last_updated": "2026-11-05T07:29:35.724572+00:00"
+  "last_updated": "2026-11-05T20:25:44.001981+00:00"
 }
