@@ -1,0 +1,246 @@
+{
+  "fetched_at": "2026-11-06T07:28:27.687512+00:00",
+  "views": {
+    "count": 306,
+    "uniques": 161,
+    "views": [
+      {
+        "timestamp": "2026-10-23T00:00:00Z",
+        "count": 35,
+        "uniques": 9
+      },
+      {
+        "timestamp": "2026-10-24T00:00:00Z",
+        "count": 8,
+        "uniques": 7
+      },
+      {
+        "timestamp": "2026-10-25T00:00:00Z",
+        "count": 6,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-10-26T00:00:00Z",
+        "count": 74,
+        "uniques": 53
+      },
+      {
+        "timestamp": "2026-10-27T00:00:00Z",
+        "count": 29,
+        "uniques": 23
+      },
+      {
+        "timestamp": "2026-10-28T00:00:00Z",
+        "count": 63,
+        "uniques": 26
+      },
+      {
+        "timestamp": "2026-10-29T00:00:00Z",
+        "count": 8,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-10-30T00:00:00Z",
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-10-31T00:00:00Z",
+        "count": 3,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-11-01T00:00:00Z",
+        "count": 5,
+        "uniques": 5
+      },
+      {
+        "timestamp": "2026-11-02T00:00:00Z",
+        "count": 10,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-11-03T00:00:00Z",
+        "count": 11,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-11-04T00:00:00Z",
+        "count": 33,
+        "uniques": 20
+      },
+      {
+        "timestamp": "2026-11-05T00:00:00Z",
+        "count": 16,
+        "uniques": 16
+      }
+    ]
+  },
+  "clones": {
+    "count": 458,
+    "uniques": 88,
+    "clones": [
+      {
+        "timestamp": "2026-10-23T00:00:00Z",
+        "count": 207,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-10-24T00:00:00Z",
+        "count": 7,
+        "uniques": 5
+      },
+      {
+        "timestamp": "2026-10-25T00:00:00Z",
+        "count": 13,
+        "uniques": 6
+      },
+      {
+        "timestamp": "2026-10-26T00:00:00Z",
+        "count": 27,
+        "uniques": 12
+      },
+      {
+        "timestamp": "2026-10-27T00:00:00Z",
+        "count": 16,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-10-28T00:00:00Z",
+        "count": 20,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-10-29T00:00:00Z",
+        "count": 19,
+        "uniques": 11
+      },
+      {
+        "timestamp": "2026-10-30T00:00:00Z",
+        "count": 10,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-10-31T00:00:00Z",
+        "count": 7,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-11-01T00:00:00Z",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-11-02T00:00:00Z",
+        "count": 16,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-11-03T00:00:00Z",
+        "count": 21,
+        "uniques": 13
+      },
+      {
+        "timestamp": "2026-11-04T00:00:00Z",
+        "count": 79,
+        "uniques": 14
+      },
+      {
+        "timestamp": "2026-11-05T00:00:00Z",
+        "count": 14,
+        "uniques": 6
+      }
+    ]
+  },
+  "referrers": [
+    {
+      "referrer": "Google",
+      "count": 11,
+      "uniques": 11
+    },
+    {
+      "referrer": "aocr.org",
+      "count": 10,
+      "uniques": 10
+    },
+    {
+      "referrer": "github.com",
+      "count": 6,
+      "uniques": 5
+    },
+    {
+      "referrer": "linux.do",
+      "count": 6,
+      "uniques": 5
+    },
+    {
+      "referrer": "t.co",
+      "count": 1,
+      "uniques": 1
+    }
+  ],
+  "paths": [
+    {
+      "path": "/Tencent-RTC/agent-skills",
+      "title": "Overview",
+      "count": 63,
+      "uniques": 45
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/issues/33",
+      "title": "/issues/33",
+      "count": 34,
+      "uniques": 19
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulse",
+      "title": "/pulse",
+      "count": 13,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
+      "title": "/blob/main/README.zh.md",
+      "count": 10,
+      "uniques": 9
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/issues",
+      "title": "/issues",
+      "count": 8,
+      "uniques": 7
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/pulls",
+      "title": "/pulls",
+      "count": 8,
+      "uniques": 5
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main",
+      "title": "/tree/main",
+      "count": 7,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills",
+      "title": "/tree/main/skills",
+      "count": 5,
+      "uniques": 3
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/SKILL.md",
+      "title": "/blob/main/skills/trtc-push/SKILL.md",
+      "count": 4,
+      "uniques": 2
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 3,
+      "uniques": 3
+    }
+  ],
+  "stars": 15,
+  "forks": 9
+}
