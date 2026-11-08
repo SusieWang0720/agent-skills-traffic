@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-11-08T06:47:27.025150+00:00",
+  "fetched_at": "2026-11-08T18:09:55.521565+00:00",
   "views": {
-    "count": 287,
-    "uniques": 166,
+    "count": 280,
+    "uniques": 162,
     "views": [
-      {
-        "timestamp": "2026-10-24T00:00:00Z",
-        "count": 8,
-        "uniques": 7
-      },
       {
         "timestamp": "2026-10-25T00:00:00Z",
         "count": 6,
@@ -73,18 +68,18 @@
         "timestamp": "2026-11-06T00:00:00Z",
         "count": 16,
         "uniques": 11
+      },
+      {
+        "timestamp": "2026-11-07T00:00:00Z",
+        "count": 1,
+        "uniques": 1
       }
     ]
   },
   "clones": {
-    "count": 264,
-    "uniques": 81,
+    "count": 326,
+    "uniques": 84,
     "clones": [
-      {
-        "timestamp": "2026-10-24T00:00:00Z",
-        "count": 7,
-        "uniques": 5
-      },
       {
         "timestamp": "2026-10-25T00:00:00Z",
         "count": 13,
@@ -149,6 +144,11 @@
         "timestamp": "2026-11-06T00:00:00Z",
         "count": 13,
         "uniques": 4
+      },
+      {
+        "timestamp": "2026-11-07T00:00:00Z",
+        "count": 69,
+        "uniques": 7
       }
     ]
   },
@@ -165,13 +165,13 @@
     },
     {
       "referrer": "github.com",
-      "count": 6,
+      "count": 5,
       "uniques": 5
     },
     {
       "referrer": "linux.do",
-      "count": 6,
-      "uniques": 5
+      "count": 2,
+      "uniques": 2
     },
     {
       "referrer": "t.co",
@@ -189,8 +189,8 @@
     {
       "path": "/Tencent-RTC/agent-skills/issues/33",
       "title": "/issues/33",
-      "count": 34,
-      "uniques": 19
+      "count": 26,
+      "uniques": 14
     },
     {
       "path": "/Tencent-RTC/agent-skills/pulse",
