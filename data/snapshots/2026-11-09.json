@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-11-09T07:21:14.898795+00:00",
+  "fetched_at": "2026-11-09T22:48:34.569140+00:00",
   "views": {
     "count": 280,
-    "uniques": 162,
+    "uniques": 163,
     "views": [
-      {
-        "timestamp": "2026-10-25T00:00:00Z",
-        "count": 6,
-        "uniques": 6
-      },
       {
         "timestamp": "2026-10-26T00:00:00Z",
         "count": 74,
@@ -73,18 +68,18 @@
         "timestamp": "2026-11-07T00:00:00Z",
         "count": 1,
         "uniques": 1
+      },
+      {
+        "timestamp": "2026-11-08T00:00:00Z",
+        "count": 6,
+        "uniques": 6
       }
     ]
   },
   "clones": {
-    "count": 326,
-    "uniques": 84,
+    "count": 315,
+    "uniques": 81,
     "clones": [
-      {
-        "timestamp": "2026-10-25T00:00:00Z",
-        "count": 13,
-        "uniques": 6
-      },
       {
         "timestamp": "2026-10-26T00:00:00Z",
         "count": 27,
@@ -149,6 +144,11 @@
         "timestamp": "2026-11-07T00:00:00Z",
         "count": 69,
         "uniques": 7
+      },
+      {
+        "timestamp": "2026-11-08T00:00:00Z",
+        "count": 2,
+        "uniques": 2
       }
     ]
   },
@@ -183,13 +183,13 @@
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 60,
-      "uniques": 45
+      "count": 59,
+      "uniques": 44
     },
     {
       "path": "/Tencent-RTC/agent-skills/issues/33",
       "title": "/issues/33",
-      "count": 26,
+      "count": 25,
       "uniques": 14
     },
     {
@@ -201,8 +201,8 @@
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
-      "count": 11,
-      "uniques": 10
+      "count": 10,
+      "uniques": 9
     },
     {
       "path": "/Tencent-RTC/agent-skills/pulls",
@@ -229,18 +229,18 @@
       "uniques": 3
     },
     {
-      "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
-      "title": "/blob/main/README.md",
+      "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
+      "title": "/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
       "count": 3,
       "uniques": 3
     },
     {
-      "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
-      "title": "/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
+      "title": "/tree/main/skills/trtc-ai-service",
       "count": 3,
       "uniques": 3
     }
   ],
   "stars": 15,
-  "forks": 9
+  "forks": 8
 }

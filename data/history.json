@@ -556,6 +556,10 @@
     "2026-11-07": {
       "count": 1,
       "uniques": 1
+    },
+    "2026-11-08": {
+      "count": 6,
+      "uniques": 6
     }
   },
   "clones": {
@@ -1114,6 +1118,10 @@
     "2026-11-07": {
       "count": 69,
       "uniques": 7
+    },
+    "2026-11-08": {
+      "count": 2,
+      "uniques": 2
     }
   },
   "referrer_history": {
@@ -13780,13 +13788,13 @@
       {
         "path": "/Tencent-RTC/agent-skills",
         "title": "Overview",
-        "count": 60,
-        "uniques": 45
+        "count": 59,
+        "uniques": 44
       },
       {
         "path": "/Tencent-RTC/agent-skills/issues/33",
         "title": "/issues/33",
-        "count": 26,
+        "count": 25,
         "uniques": 14
       },
       {
@@ -13798,8 +13806,8 @@
       {
         "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
         "title": "/blob/main/README.zh.md",
-        "count": 11,
-        "uniques": 10
+        "count": 10,
+        "uniques": 9
       },
       {
         "path": "/Tencent-RTC/agent-skills/pulls",
@@ -13826,14 +13834,14 @@
         "uniques": 3
       },
       {
-        "path": "/Tencent-RTC/agent-skills/blob/main/README.md",
-        "title": "/blob/main/README.md",
+        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
+        "title": "/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
         "count": 3,
         "uniques": 3
       },
       {
-        "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
-        "title": "/blob/main/skills/trtc-push/issues/cards/common/registration-binding.md",
+        "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-service",
+        "title": "/tree/main/skills/trtc-ai-service",
         "count": 3,
         "uniques": 3
       }
@@ -14342,8 +14350,8 @@
     },
     "2026-11-09": {
       "stars": 15,
-      "forks": 9
+      "forks": 8
     }
   },
-  "last_updated": "2026-11-09T07:21:14.898795+00:00"
+  "last_updated": "2026-11-09T22:48:34.569140+00:00"
 }
