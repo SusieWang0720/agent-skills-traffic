@@ -1,19 +1,9 @@
 {
-  "fetched_at": "2026-11-17T08:38:16.309385+00:00",
+  "fetched_at": "2026-11-17T21:27:37.857602+00:00",
   "views": {
-    "count": 191,
-    "uniques": 108,
+    "count": 197,
+    "uniques": 113,
     "views": [
-      {
-        "timestamp": "2026-11-01T00:00:00Z",
-        "count": 5,
-        "uniques": 5
-      },
-      {
-        "timestamp": "2026-11-02T00:00:00Z",
-        "count": 10,
-        "uniques": 8
-      },
       {
         "timestamp": "2026-11-03T00:00:00Z",
         "count": 11,
@@ -73,23 +63,23 @@
         "timestamp": "2026-11-14T00:00:00Z",
         "count": 3,
         "uniques": 3
+      },
+      {
+        "timestamp": "2026-11-15T00:00:00Z",
+        "count": 13,
+        "uniques": 12
+      },
+      {
+        "timestamp": "2026-11-16T00:00:00Z",
+        "count": 8,
+        "uniques": 7
       }
     ]
   },
   "clones": {
-    "count": 352,
-    "uniques": 94,
+    "count": 413,
+    "uniques": 101,
     "clones": [
-      {
-        "timestamp": "2026-11-01T00:00:00Z",
-        "count": 2,
-        "uniques": 2
-      },
-      {
-        "timestamp": "2026-11-02T00:00:00Z",
-        "count": 16,
-        "uniques": 8
-      },
       {
         "timestamp": "2026-11-03T00:00:00Z",
         "count": 21,
@@ -149,14 +139,24 @@
         "timestamp": "2026-11-14T00:00:00Z",
         "count": 23,
         "uniques": 13
+      },
+      {
+        "timestamp": "2026-11-15T00:00:00Z",
+        "count": 62,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-11-16T00:00:00Z",
+        "count": 17,
+        "uniques": 9
       }
     ]
   },
   "referrers": [
     {
       "referrer": "Google",
-      "count": 21,
-      "uniques": 15
+      "count": 20,
+      "uniques": 14
     },
     {
       "referrer": "github.com",
@@ -178,14 +178,20 @@
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 54,
-      "uniques": 40
+      "count": 51,
+      "uniques": 38
     },
     {
       "path": "/Tencent-RTC/agent-skills/issues",
       "title": "/issues",
       "count": 12,
       "uniques": 7
+    },
+    {
+      "path": "/Tencent-RTC/agent-skills/discussions",
+      "title": "/discussions",
+      "count": 10,
+      "uniques": 8
     },
     {
       "path": "/Tencent-RTC/agent-skills/tree/main/skills",
@@ -196,20 +202,14 @@
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-realtime-interpreter/README.zh-CN.md",
       "title": "/blob/main/skills/trtc-ai-realtime-interpreter/README.zh-CN.md",
-      "count": 8,
-      "uniques": 3
-    },
-    {
-      "path": "/Tencent-RTC/agent-skills/discussions",
-      "title": "/discussions",
-      "count": 6,
-      "uniques": 6
+      "count": 7,
+      "uniques": 2
     },
     {
       "path": "/Tencent-RTC/agent-skills/blob/main/README.zh.md",
       "title": "/blob/main/README.zh.md",
-      "count": 6,
-      "uniques": 4
+      "count": 5,
+      "uniques": 3
     },
     {
       "path": "/Tencent-RTC/agent-skills/issues/28",
@@ -224,16 +224,16 @@
       "uniques": 2
     },
     {
-      "path": "/Tencent-RTC/agent-skills/blob/main/CLAUDE.md",
-      "title": "/blob/main/CLAUDE.md",
+      "path": "/Tencent-RTC/agent-skills/blob/main/skills/trtc-ai-realtime-interpreter/SKILL.md",
+      "title": "/blob/main/skills/trtc-ai-realtime-interpreter/SKILL.md",
       "count": 3,
-      "uniques": 3
+      "uniques": 2
     },
     {
-      "path": "/Tencent-RTC/agent-skills/issues/33",
-      "title": "/issues/33",
+      "path": "/Tencent-RTC/agent-skills/pull/34",
+      "title": "/pull/34",
       "count": 3,
-      "uniques": 3
+      "uniques": 2
     }
   ],
   "stars": 15,
