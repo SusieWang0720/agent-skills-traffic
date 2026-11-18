@@ -1,14 +1,9 @@
 {
-  "fetched_at": "2026-11-18T08:01:03.535916+00:00",
+  "fetched_at": "2026-11-18T21:01:19.611644+00:00",
   "views": {
-    "count": 197,
+    "count": 194,
     "uniques": 113,
     "views": [
-      {
-        "timestamp": "2026-11-03T00:00:00Z",
-        "count": 11,
-        "uniques": 8
-      },
       {
         "timestamp": "2026-11-04T00:00:00Z",
         "count": 33,
@@ -73,18 +68,18 @@
         "timestamp": "2026-11-16T00:00:00Z",
         "count": 8,
         "uniques": 7
+      },
+      {
+        "timestamp": "2026-11-17T00:00:00Z",
+        "count": 8,
+        "uniques": 8
       }
     ]
   },
   "clones": {
-    "count": 413,
-    "uniques": 101,
+    "count": 403,
+    "uniques": 97,
     "clones": [
-      {
-        "timestamp": "2026-11-03T00:00:00Z",
-        "count": 21,
-        "uniques": 13
-      },
       {
         "timestamp": "2026-11-04T00:00:00Z",
         "count": 79,
@@ -149,14 +144,19 @@
         "timestamp": "2026-11-16T00:00:00Z",
         "count": 17,
         "uniques": 9
+      },
+      {
+        "timestamp": "2026-11-17T00:00:00Z",
+        "count": 11,
+        "uniques": 8
       }
     ]
   },
   "referrers": [
     {
       "referrer": "Google",
-      "count": 20,
-      "uniques": 14
+      "count": 19,
+      "uniques": 13
     },
     {
       "referrer": "github.com",
@@ -178,14 +178,14 @@
     {
       "path": "/Tencent-RTC/agent-skills",
       "title": "Overview",
-      "count": 51,
-      "uniques": 38
+      "count": 50,
+      "uniques": 37
     },
     {
       "path": "/Tencent-RTC/agent-skills/issues",
       "title": "/issues",
-      "count": 12,
-      "uniques": 7
+      "count": 13,
+      "uniques": 8
     },
     {
       "path": "/Tencent-RTC/agent-skills/discussions",
@@ -230,8 +230,8 @@
       "uniques": 2
     },
     {
-      "path": "/Tencent-RTC/agent-skills/pull/34",
-      "title": "/pull/34",
+      "path": "/Tencent-RTC/agent-skills/tree/main/skills/trtc-ai-realtime-interpreter",
+      "title": "/tree/main/skills/trtc-ai-realtime-interpreter",
       "count": 3,
       "uniques": 2
     }
